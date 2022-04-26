@@ -1,5 +1,5 @@
 FROM gitpod/workspace-full-vnc
 
 # Install dependencies
-RUN apt-get update \
-    && apt-get install -y librust-gdk-sys-dev 
+RUN sudo apt-get update \
+    && sudo apt-get install -y librust-gdk-sys-dev 
