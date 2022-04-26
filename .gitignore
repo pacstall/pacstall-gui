@@ -16,6 +16,3 @@ Cargo.lock
 # Replit
 replit.nix
 .replit
-
-# Gitpod
-gitpod.yml
