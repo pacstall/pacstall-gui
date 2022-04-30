@@ -1,0 +1,31 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install APT dependencies
+      run: sudo apt-get install librust-gdk-sys-dev --assume-yes
+    - uses: Swatinem/rust-cache@v1
+    - uses: actions-rs/clippy-check@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        args: --all-features
+    - name: Build
+      run: cargo build
+    - uses: actions/upload-artifact@v3
+      with:
+        name: pacstall-gui
+        path: target/debug/pacstall-gui
+    - name: Run tests
+      run: cargo test
