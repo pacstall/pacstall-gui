@@ -1,10 +1,21 @@
 [package]
-name = "my-project"
+name = "pacstall-gui"
 version = "0.1.0"
-authors = ["runner"]
+authors = ["wizard-28 <wiz28@protonmail.com>"]
 edition = "2021"
+description = "A GUI frontend for Pacstall"
+homepage = "https://pacstall.dev/"
+repository = "https://github.com/pacstall/pacstall-gui/"
+license = "GPL-3.0-or-later"
+keywords = ["pacstall", "gui", "apt", "ubuntu", "gtk"]
+categories = ["gui"]
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 gtk = "0.15.5"
+reqwest = "0.11.10"
+tokio = { version = "1.18.0", features = ["macros", "process", "rt-multi-thread"] }
+tracing = "0.1.34"
+tracing-subscriber = "0.3.11"

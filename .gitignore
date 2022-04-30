@@ -16,3 +16,6 @@ Cargo.lock
 # Replit
 replit.nix
 .replit
+
+# Gitpod
+setup.sh
