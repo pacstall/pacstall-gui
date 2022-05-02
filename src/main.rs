@@ -1,4 +1,3 @@
-use std::error::Error;
 use std::fs;
 
 use glib::MainContext;
@@ -6,9 +5,12 @@ use gtk::prelude::*;
 use gtk::{self, glib, Application, ApplicationWindow, ListBox};
 use tokio::process::Command;
 use tracing::{debug, info, trace, Level};
+use color_eyre::eyre::Result;
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<()> {
+    color_eyre::install()?;
+
     tracing_subscriber::fmt()
         .with_max_level(Level::DEBUG)
         .init();
