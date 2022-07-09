@@ -1,11 +1,11 @@
 use std::fs;
 
+use color_eyre::eyre::Result;
 use glib::MainContext;
 use gtk::prelude::*;
 use gtk::{self, glib, Application, ApplicationWindow, ListBox};
 use tokio::process::Command;
 use tracing::{debug, info, trace, Level};
-use color_eyre::eyre::Result;
 
 #[tokio::main]
 async fn main() -> Result<()> {
